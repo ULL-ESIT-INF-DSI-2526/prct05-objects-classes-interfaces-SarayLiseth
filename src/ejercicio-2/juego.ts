@@ -1,5 +1,9 @@
 import { TableroI, Jugador, Tablero, Ficha } from "./tablero"
 
+/**
+ * Representa una partida de Conecta4, permitiendo jugar turnos según
+ * el jugador en un tablero predefinido
+ */
 export class Juego {
   private tablero: TableroI;
   private jugador1: Jugador;
@@ -7,6 +11,11 @@ export class Juego {
   private turnoActual: Jugador;
   private juegoTerminado: boolean;
 
+  /**
+   * Crea una nueva instancia de una partida de Conecta4
+   * @param nombreJ1 - Jugador 1
+   * @param nombreJ2 - Jugador 2
+   */
   constructor(nombreJ1: string = "Jugador 1", nombreJ2: string = "Jugador 2") {
     this.tablero = new Tablero();
     this.jugador1 = { nombre: nombreJ1, ficha: Ficha.Jugador1 };
@@ -15,6 +24,11 @@ export class Juego {
     this.juegoTerminado = false;
   }
 
+  /**
+   * Simula el desarrollo de un turno del juego Conecta4, permitiendo al jugador
+   * colocar su ficha y verificar si ha ganado o si ha empatado
+   * @param columna - Columna en la que se quiere poner la ficha
+   */
   jugarTurno(columna: number): void {
     if (this.juegoTerminado) {
       console.log("El juego ha terminado");
