@@ -27,7 +27,7 @@ describe('SistemaREcetas tests', () => {
   });
 
   describe('Clase Receta', () => {
-    it('Debe calcular correctamente el número de pasos', () => {
+    it('Debe calcular correctamente el número despyOn pasos', () => {
       expect(receta.numeroPasos()).toBe(2);
     });
 
